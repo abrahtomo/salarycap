@@ -1,4 +1,4 @@
-package com.codecool.salarycap.Model;
+package com.codecool.salarycap.model;
 
 
 import javax.persistence.*;
@@ -11,7 +11,7 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long playerId;
 
     @Column(name = "name")
     private String name;
@@ -23,8 +23,8 @@ public class Player {
     private String birthplace;
 
     @ManyToOne
-    @JoinColumn(name = "teamid")
-    private Team teamid;
+    @JoinColumn(name = "teamId")
+    private Team teamId;
 
     @Column(name = "position")
     private String position;
@@ -40,8 +40,8 @@ public class Player {
         this.caphit = caphit;
     }
 
-    public long getId() {
-        return id;
+    public long getPlayerId() {
+        return playerId;
     }
 
     public String getName() {
@@ -56,8 +56,8 @@ public class Player {
         return birthplace;
     }
 
-    public Team getTeamid() {
-        return teamid;
+    public Team getTeamId() {
+        return teamId;
     }
 
     public String getPosition() {
@@ -68,8 +68,8 @@ public class Player {
         return caphit;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setPlayerId(long playerId) {
+        this.playerId = playerId;
     }
 
     public void setName(String name) {
@@ -84,8 +84,8 @@ public class Player {
         this.birthplace = birthplace;
     }
 
-    public void setTeamid(Team teamid) {
-        this.teamid = teamid;
+    public void setTeamId(Team teamId) {
+        this.teamId = teamId;
     }
 
     public void setPosition(String position) {
