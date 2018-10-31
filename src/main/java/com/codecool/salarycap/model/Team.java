@@ -1,20 +1,22 @@
 package com.codecool.salarycap.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "Teams")
 public class Team {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long teamId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "teamName")
     private String teamName;
 
-    @OneToMany(mappedBy = "tean")
-    private Set<Player> players = new HashSet<>();
+    @OneToMany(mappedBy = "team")
+    private Set<Player> players;
 
     public Team(String teamName, Set<Player> players) {
         this.teamName = teamName;
@@ -22,7 +24,7 @@ public class Team {
     }
 
     public long getTeamId() {
-        return teamId;
+        return id;
     }
 
     public String getTeamName() {
@@ -34,7 +36,7 @@ public class Team {
     }
 
     public void setTeamId(long teamId) {
-        this.teamId = teamId;
+        this.id = teamId;
     }
 
     public void setTeamName(String teamName) {
