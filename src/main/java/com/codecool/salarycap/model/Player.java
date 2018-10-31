@@ -81,7 +81,7 @@ public class Player {
         this.birthplace = birthplace;
     }
 
-    public void setTeamId(Team team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 

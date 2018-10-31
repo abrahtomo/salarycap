@@ -18,9 +18,8 @@ public class Team {
     @OneToMany(mappedBy = "team")
     private Set<Player> players;
 
-    public Team(String teamName, Set<Player> players) {
+    public Team(String teamName) {
         this.teamName = teamName;
-        this.players = players;
     }
 
     public long getTeamId() {
