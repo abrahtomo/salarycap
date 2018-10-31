@@ -29,6 +29,9 @@ public class Player {
     @Column(name = "caphit")
     private double caphit;
 
+    public Player() {
+    }
+
     public Player(String name, String birthplace, String position, double caphit) {
         this.name = name;
         //this.birthday = birthday;

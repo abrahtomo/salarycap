@@ -1,5 +1,7 @@
 package com.codecool.salarycap.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -16,7 +18,11 @@ public class Team {
     private String teamName;
 
     @OneToMany(mappedBy = "team")
+    @JsonIgnore
     private Set<Player> players;
+
+    public Team() {
+    }
 
     public Team(String teamName) {
         this.teamName = teamName;
