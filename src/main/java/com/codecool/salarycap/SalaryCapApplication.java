@@ -10,6 +10,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 
 @SpringBootApplication
 public class SalaryCapApplication implements CommandLineRunner {
@@ -33,12 +36,14 @@ public class SalaryCapApplication implements CommandLineRunner {
     private void saveData() {
         Player getzlaf = new Player(
                 "Ryan Getzlaf",
+                new GregorianCalendar(1985, Calendar.MAY, 10).getTime(),
                 "Regina",
                 "Center",
                 8250000);
 
         Player gibson = new Player(
                 "John Gibson",
+                new GregorianCalendar(1993, Calendar.JULY, 14).getTime(),
                 "Pittsburgh",
                 "Goalie",
                 6400000

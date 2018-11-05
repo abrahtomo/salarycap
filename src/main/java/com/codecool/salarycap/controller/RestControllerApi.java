@@ -6,6 +6,7 @@ import com.codecool.salarycap.service.PlayerService;
 import com.codecool.salarycap.service.TeamService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,11 +24,13 @@ public class RestControllerApi {
         this.playerService = playerService;
     }
 
+    @CrossOrigin
     @GetMapping("/teams")
     public ResponseEntity<List<Team>> getAllTeams() {
         return new ResponseEntity(teamService.findAll(), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping("/team/{id}")
     public ResponseEntity<List<Player>> getPlayersByeTeam(@PathVariable("id") Team id) {
         return new ResponseEntity(playerService.findByTeam(id), HttpStatus.OK);

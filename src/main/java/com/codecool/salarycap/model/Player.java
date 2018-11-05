@@ -1,6 +1,7 @@
 package com.codecool.salarycap.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Player {
@@ -13,8 +14,8 @@ public class Player {
     @Column(name = "name")
     private String name;
 
-    /*@Column(name = "birthday")
-    private Date birthday;*/
+    @Column(name = "birthday")
+    private Date birthday;
 
     @Column(name = "birthplace")
     private String birthplace;
@@ -32,9 +33,9 @@ public class Player {
     public Player() {
     }
 
-    public Player(String name, String birthplace, String position, double caphit) {
+    public Player(String name, Date birthday, String birthplace, String position, double caphit) {
         this.name = name;
-        //this.birthday = birthday;
+        this.birthday = birthday;
         this.birthplace = birthplace;
         this.position = position;
         this.caphit = caphit;
@@ -48,9 +49,9 @@ public class Player {
         return name;
     }
 
-    /*public Date getBirthday() {
+    public Date getBirthday() {
         return birthday;
-    }*/
+    }
 
     public String getBirthplace() {
         return birthplace;
@@ -76,9 +77,9 @@ public class Player {
         this.name = name;
     }
 
-    /*public void setBirthday(Date birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
-    }*/
+    }
 
     public void setBirthplace(String birthplace) {
         this.birthplace = birthplace;
