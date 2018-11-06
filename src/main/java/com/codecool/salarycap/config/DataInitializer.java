@@ -44,13 +44,26 @@ public class DataInitializer {
                 6400000
         );
 
+        Player keller = new Player(
+                "Clayton Keller",
+                new GregorianCalendar(1998, Calendar.JULY, 29).getTime(),
+                "Swansea",
+                "Center, Left Wing",
+                885833
+        );
+
         Team anaheim = new Team("Anaheim Ducks");
+        Team arizona = new Team("Arizona");
 
         getzlaf.setTeam(anaheim);
         gibson.setTeam(anaheim);
 
+        keller.setTeam(arizona);
+
         teamService.saveTeam(anaheim);
+        teamService.saveTeam(arizona);
         playerService.savePlayer(getzlaf);
         playerService.savePlayer(gibson);
+        playerService.savePlayer(keller);
     }
 }

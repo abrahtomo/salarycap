@@ -2,6 +2,8 @@ package com.codecool.salarycap.controller;
 
 import com.codecool.salarycap.model.Player;
 import com.codecool.salarycap.model.Team;
+import com.codecool.salarycap.model.TeamDTO;
+import com.codecool.salarycap.respository.TeamRepository;
 import com.codecool.salarycap.service.PlayerService;
 import com.codecool.salarycap.service.TeamService;
 import org.springframework.http.HttpStatus;
@@ -26,8 +28,8 @@ public class RestControllerApi {
 
     @CrossOrigin
     @GetMapping("/teams")
-    public ResponseEntity<List<Team>> getAllTeams() {
-        return new ResponseEntity(teamService.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<TeamDTO>> getAllTeams() {
+        return new ResponseEntity(teamService.findMainPageInfo(), HttpStatus.OK);
     }
 
     @CrossOrigin

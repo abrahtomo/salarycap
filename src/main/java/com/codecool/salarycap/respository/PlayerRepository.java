@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 
-    @Query("SELECT p from Player p where p.team = :team")
+    @Query(nativeQuery = true, value = "SELECT * from Player where team = team")
     List<Player> findByTeamId(@Param("team") Team teamId);
 }
