@@ -1,7 +1,6 @@
 package com.codecool.salarycap.service;
 
 import com.codecool.salarycap.model.Player;
-import com.codecool.salarycap.model.Team;
 import com.codecool.salarycap.respository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,5 +17,5 @@ public class PlayerService {
 
     public void savePlayer(Player entity) {playerRepository.save(entity);}
 
-    public List<Player> findByTeam(Team id) {return playerRepository.findByTeamId(id);}
+    public List<Player> findByTeam(long id) {return playerRepository.findPlayersByTeamId(id);}
 }

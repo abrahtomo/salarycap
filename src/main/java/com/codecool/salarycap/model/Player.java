@@ -1,5 +1,8 @@
 package com.codecool.salarycap.model;
 
+import com.codecool.salarycap.util.View;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -8,26 +11,31 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column
+    @JsonView(View.Public.class)
     private long id;
 
-    @Column(name = "name")
+    @Column
+    @JsonView(View.Public.class)
     private String name;
 
-    @Column(name = "birthday")
+    @Column
+    @JsonView(View.Internal.class)
     private Date birthday;
 
-    @Column(name = "birthplace")
+    @Column
     private String birthplace;
 
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
 
-    @Column(name = "position")
+    @Column
+    @JsonView(View.Public.class)
     private String position;
 
-    @Column(name = "caphit")
+    @Column
+    @JsonView(View.Public.class)
     private double caphit;
 
     public Player() {

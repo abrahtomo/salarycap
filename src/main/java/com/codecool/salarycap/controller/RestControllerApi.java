@@ -1,11 +1,11 @@
 package com.codecool.salarycap.controller;
 
 import com.codecool.salarycap.model.Player;
-import com.codecool.salarycap.model.Team;
 import com.codecool.salarycap.model.TeamDTO;
-import com.codecool.salarycap.respository.TeamRepository;
 import com.codecool.salarycap.service.PlayerService;
 import com.codecool.salarycap.service.TeamService;
+import com.codecool.salarycap.util.View;
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -33,8 +33,9 @@ public class RestControllerApi {
     }
 
     @CrossOrigin
-    @GetMapping("/team/{id}")
-    public ResponseEntity<List<Player>> getPlayersByeTeam(@PathVariable("id") Team id) {
+    @GetMapping("/teams/{id}")
+    @JsonView(View.Public.class)
+    public ResponseEntity<List<Player>> getPlayersByeTeam(@PathVariable("id") long id) {
         return new ResponseEntity(playerService.findByTeam(id), HttpStatus.OK);
     }
 }

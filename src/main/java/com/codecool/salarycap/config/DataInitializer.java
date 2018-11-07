@@ -53,7 +53,7 @@ public class DataInitializer {
         );
 
         Team anaheim = new Team("Anaheim Ducks");
-        Team arizona = new Team("Arizona");
+        Team arizona = new Team("Arizona Coyotes");
 
         getzlaf.setTeam(anaheim);
         gibson.setTeam(anaheim);
