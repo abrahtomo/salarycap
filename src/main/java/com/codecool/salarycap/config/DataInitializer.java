@@ -85,6 +85,24 @@ public class DataInitializer {
                 6750000
         );
 
+        //Init Carolina Players
+        Player jStaal = new Player(
+                "Jordan Staal",
+                new GregorianCalendar(1988, Calendar.SEPTEMBER, 10).getTime(),
+                "Thunder Bay",
+                "Center, Left Wing",
+                6000000
+        );
+
+        //Init Chicago Players
+        Player pKane = new Player(
+                "Patrick Kane",
+                new GregorianCalendar(1988, Calendar.NOVEMBER, 19).getTime(),
+                "Buffalo",
+                "Right Wing, Center",
+                10500000
+        );
+
         Team anaheim = new Team("Anaheim Ducks");
         Team arizona = new Team("Arizona Coyotes");
         Team boston = new Team("Boston Bruins");
@@ -128,6 +146,10 @@ public class DataInitializer {
 
         giordano.setTeam(calgary);
 
+        jStaal.setTeam(carolina);
+
+        pKane.setTeam(chicago);
+
         teamService.saveTeam(anaheim);
         teamService.saveTeam(arizona);
         teamService.saveTeam(boston);
@@ -170,5 +192,9 @@ public class DataInitializer {
         playerService.savePlayer(eichel);
 
         playerService.savePlayer(giordano);
+
+        playerService.savePlayer(jStaal);
+
+        playerService.savePlayer(pKane);
     }
 }
